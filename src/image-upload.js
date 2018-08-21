@@ -74,7 +74,7 @@ export class ImageUpload {
 
 		// listen callback
 		xhr.onload = () => {
-			if (xhr.status === 200) {
+			if (xhr.status === 200 || xhr.status === 201) {
 				callbackOK(JSON.parse(xhr.responseText), this.insert.bind(this));
 			} else {
 				callbackKO({
